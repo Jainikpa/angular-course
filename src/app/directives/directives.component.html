@@ -1,0 +1,69 @@
+<div style="padding: 50px">
+  <div>
+    <h1>Attribute directives</h1>
+    <div>
+      <ul>
+        <li>ngClass</li>
+        <li>ngStyle</li>
+      </ul>
+
+      <div>
+        <div>NgStyle</div>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input
+            matInput
+            type="number"
+            placeholder="Enter Marks"
+            [(ngModel)]="marks"
+          />
+        </mat-form-field>
+      </div>
+      <div>
+        <button mat-raised-button color="primary" (click)="onSubmitClick()">
+          Submit
+        </button>
+      </div>
+
+      <div [ngStyle]="{ color: isPassed ? 'pass' : 'fail' }">{{ result }}</div>
+
+      <div [ngClass]="isPassed ? 'pass' : 'fail'">{{ result }}</div>
+    </div>
+  </div>
+
+  <div>
+    <h1>Structural directives</h1>
+  </div>
+
+  <div>
+    <ul>
+      <li>*ngIf</li>
+      <li>*ngFor</li>
+      <li>*ngSwitchCase</li>
+    </ul>
+  </div>
+
+  <div style="display: none">this is testing</div>
+  <div style="opacity: 0">this is testing</div>
+  <div hidden>this is testing</div>
+
+  <div>*ngIf</div>
+  <div *ngIf="marks > 35">this is testing</div>
+
+  <div>*ngFor</div>
+
+  <div>
+    <ul>
+      <li *ngFor="let obj of students">{{ obj.name }} ({{ obj.age }})</li>
+    </ul>
+  </div>
+
+  <div>
+    <div [ngSwitch]="marks">
+      <div *ngSwitchCase="50">passed</div>
+      <div *ngSwitchCase="2">failed</div>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  AfterContentChecked,
+  AfterContentInit,
+  Component,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,7 +13,9 @@ import { Router } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent
+  implements OnInit, OnChanges, AfterContentChecked, AfterContentInit
+{
   name: string = '';
   number: number = 0;
   address: string = '';
@@ -19,10 +28,19 @@ export class HomeComponent implements OnInit {
   isMyInputDisable = false;
   myInputValue = ' Patel';
   myType = 'text';
+
   type = 'password';
-  constructor(public router: Router) {}
+
+  myVar: number;
+  constructor(public router: Router) {
+    this.myVar = 2;
+  }
+  ngAfterContentInit(): void {}
+  ngAfterContentChecked(): void {}
 
   ngOnInit(): void {}
+
+  ngOnChanges(changes: SimpleChanges): void {}
 
   goToAboutus() {
     console.log('Button Clicked');
