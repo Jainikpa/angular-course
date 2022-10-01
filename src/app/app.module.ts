@@ -17,8 +17,12 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
+import { DirectivesComponent } from './directives/directives.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 @NgModule({
-  declarations: [AppComponent, HomeComponent, AboutUsComponent],
+  declarations: [AppComponent, HomeComponent, AboutUsComponent, DirectivesComponent, ParentComponent, ChildComponent, FileUploadComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

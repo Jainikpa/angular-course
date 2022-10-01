@@ -13,6 +13,8 @@
       />
       <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
     </mat-form-field>
+
+    {{ name }}
     <div
       style="color: red"
       *ngIf="nameValue?.touched && nameValue?.errors?.required"
