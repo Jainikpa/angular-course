@@ -1,0 +1,33 @@
+<div style="padding: 50px">
+  <div>
+    <h1>Uppercase Pipe</h1>
+    <div>{{ name }}</div>
+
+    <div>Output</div>
+    <div>{{ name | uppercase }}</div>
+  </div>
+
+  <div>
+    <h1>Lowercase Pipe</h1>
+    <div>{{ name }}</div>
+
+    <div>Output</div>
+    <div>{{ name1 | lowercase }}</div>
+  </div>
+
+  <div>
+    <h1>Date Pipe</h1>
+    <div>{{ myDate }}</div>
+
+    <div>Output</div>
+    <div>{{ myDate | date: "shortTime" }}</div>
+  </div>
+
+  <div>
+    <h1>Currency Pipe</h1>
+    <div>{{ money }}</div>
+
+    <div>Output</div>
+    <div>{{ money | percent: "6.2-4" }}</div>
+  </div>
+</div>

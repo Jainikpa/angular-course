@@ -21,8 +21,26 @@ import { DirectivesComponent } from './directives/directives.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
+import { PipesComponent } from './pipes/pipes.component';
+import {
+  CurrencyPipe,
+  DatePipe,
+  DecimalPipe,
+  PercentPipe,
+} from '@angular/common';
+import { TemplateDrivenComponent } from './template-driven/template-driven.component';
 @NgModule({
-  declarations: [AppComponent, HomeComponent, AboutUsComponent, DirectivesComponent, ParentComponent, ChildComponent, FileUploadComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    AboutUsComponent,
+    DirectivesComponent,
+    ParentComponent,
+    ChildComponent,
+    FileUploadComponent,
+    PipesComponent,
+    TemplateDrivenComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -40,7 +58,7 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
     MatSelectModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [DatePipe, CurrencyPipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
