@@ -46,5 +46,7 @@ export class HomeComponent implements OnInit {
 
     console.log('agree : -', this.agree);
     console.log('Country : -', this.country);
+
+
   }
 }

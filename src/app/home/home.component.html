@@ -1,22 +1,64 @@
 <div style="padding: 50px">
   <div>
     <mat-form-field style="width: 100%" appearance="outline">
+      <<<<<<< HEAD
       <mat-label>Nasfdsdaffsdfsdfsdfsdame</mat-label>
       <input [(ngModel)]="name" matInput placeholder="enter name" />
+      =======
+      <mat-label>Name</mat-label>
+      <input
+        [(ngModel)]="name"
+        #nameValue="ngModel"
+        matInput
+        required
+        minlength="5"
+        maxlength="20"
+        placeholder="enter name"
+      />
+      >>>>>>> main
       <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
     </mat-form-field>
+    <div
+      style="color: red"
+      *ngIf="nameValue?.touched && nameValue?.errors?.required"
+    >
+      Name is required.
+    </div>
+
+    <div
+      style="color: red"
+      *ngIf="nameValue?.touched && nameValue?.errors?.minlength"
+    >
+      Your name should be at least 5 char. long.
+    </div>
+
+    <div
+      style="color: red"
+      *ngIf="nameValue?.touched && nameValue?.errors?.maxlength"
+    >
+      Your name should not be more than 20 char.
+    </div>
   </div>
   <div>
     <mat-form-field style="width: 100%" appearance="outline">
-      <mat-label>Mobile Number</mat-label>
+      <mat-label>Age</mat-label>
       <input
         [(ngModel)]="number"
         type="number"
+        min="18"
+        max="52"
         matInput
+        #myAge="ngModel"
         placeholder="enter number"
       />
       <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
     </mat-form-field>
+    <div style="color: red" *ngIf="myAge?.touched && myAge?.errors?.min">
+      Value should be more than 18
+    </div>
+    <div style="color: red" *ngIf="myAge?.touched && myAge?.errors?.max">
+      Value should not be more than 52
+    </div>
   </div>
 
   <div>
@@ -38,10 +80,21 @@
         [(ngModel)]="email"
         type="email"
         matInput
+        #myEmail="ngModel"
+        email
+        required
         placeholder="enter email"
       />
       <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
     </mat-form-field>
+
+    <div *ngIf="myEmail?.touched && myEmail?.errors?.required">
+      Email is required.
+    </div>
+
+    <div *ngIf="myEmail.touched && myEmail?.errors?.email">
+      This is not valid email.
+    </div>
   </div>
   <div>
     <mat-label style="margin-right: 10px">Gender</mat-label>
@@ -74,6 +127,8 @@
         [(ngModel)]="password"
         [type]="type"
         matInput
+        pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+        #myPassword="ngModel"
         placeholder="enter password"
       />
       <mat-icon
@@ -83,6 +138,10 @@
         {{ type == "password" ? "visibility" : "visibility_off" }}
       </mat-icon>
     </mat-form-field>
+
+    <div *ngIf="myPassword.touched && myPassword?.errors?.pattern">
+      Your password does not match requirements.
+    </div>
   </div>
 
   <div>
