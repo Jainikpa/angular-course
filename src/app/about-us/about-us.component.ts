@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-about-us',
@@ -8,9 +9,32 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class AboutUsComponent implements OnInit {
   myForm: FormGroup;
-  constructor() {}
+  id: any;
+  age = 5;
+  demoJso = {
+    name: {
+      fName: 'Jainik',
+      lName: 'Patel',
+    },
+  };
+
+  constructor(private aRoute: ActivatedRoute) {}
+
+  myMethod(value, value2?, value3?) {
+    console.log(value, value2, value3);
+  }
 
   ngOnInit(): void {
+    console.log(this.demoJso['name']['fName']);
+
+    this.myMethod(1, 2, 3);
+
+    console.log(
+      this.age > 18 ? 'you are greater than 18' : ' you are less than 18'
+    );
+
+    this.id = this.aRoute?.snapshot?.params?.id;
+    console.log('My Id :- ', this.id);
     this.myForm = new FormGroup({
       name: new FormControl('', [
         Validators.required,
