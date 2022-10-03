@@ -1,0 +1,16 @@
+<div style="padding: 50px">
+  <div>My Child Component :-</div>
+  <div style="margin-top: 20px">
+    <app-child #child></app-child>
+  </div>
+
+  <div>
+    <button (click)="onSetAndPrintClick()">Set & Print</button>
+  </div>
+
+  <button (click)="child.printName()">submit</button>
+</div>
+<app-file-upload
+  (upload)="onFileUpload($event)"
+  [showCamera]="false"
+></app-file-upload>
