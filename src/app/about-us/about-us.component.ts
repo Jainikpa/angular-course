@@ -42,12 +42,23 @@ export class AboutUsComponent implements OnInit {
         Validators.maxLength(20),
         Validators.pattern(''),
       ]),
-      number: new FormControl(null, Validators.min(18)),
-      address: new FormControl(),
+      number: new FormControl('', [
+        Validators.required,
+        Validators.min(18),
+        Validators.max(50),
+      ]),
+      address: new FormControl(null, [
+        Validators.minLength(50),
+        Validators.maxLength(100),
+      ]),
       dob: new FormControl(),
       email: new FormControl(),
       gender: new FormControl('male'),
-      password: new FormControl(),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(6),
+        Validators.maxLength(10),
+      ]),
       agree: new FormControl(true),
       country: new FormControl(),
     });
