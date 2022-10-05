@@ -1,0 +1,15 @@
+<div style="padding: 20px">
+  <div
+    style="
+      border: 1px solid black;
+      padding: 5px;
+      border-radius: 5px;
+      margin-bottom: 5px;
+    "
+    *ngFor="let post of posts"
+  >
+    <div>Id : {{ post?.id }}</div>
+    <div>Name : {{ post?.name }}</div>
+    <div>Author : {{ post?.author }}</div>
+  </div>
+</div>
