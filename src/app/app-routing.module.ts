@@ -5,6 +5,7 @@ import { DirectivesComponent } from './directives/directives.component';
 import { HomeComponent } from './home/home.component';
 import { ParentComponent } from './parent/parent.component';
 import { PipesComponent } from './pipes/pipes.component';
+import { TemplateDrivenComponent } from './template-driven/template-driven.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
   {
     path: 'pipes',
     component: PipesComponent,
+  },
+  {
+    path: 'template-driven',
+    component: TemplateDrivenComponent,
   },
 ];
 

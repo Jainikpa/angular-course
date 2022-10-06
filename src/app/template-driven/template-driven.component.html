@@ -65,10 +65,19 @@
         [(ngModel)]="address"
         type="text"
         matInput
+        minlength="50"
+        maxlength="100"
+        #Myaddress="ngModel"
         placeholder="type address"
       ></textarea>
       <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
     </mat-form-field>
+    <div *ngIf="Myaddress?.touched && Myaddress?.errors?.minlength">
+      minimum 50 char..
+    </div>
+    <div *ngIf="Myaddress?.touched && Myaddress?.errors?.maxlength">
+      more than 100 char..
+    </div>
   </div>
   <div>
     <mat-form-field style="width: 100%" appearance="outline">
@@ -80,6 +89,7 @@
         #myEmail="ngModel"
         email
         required
+        #Myemail="ngModel"
         placeholder="enter email"
       />
       <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
