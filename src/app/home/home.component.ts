@@ -7,6 +7,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { Router } from '@angular/router';
+import { CmnServiceService } from '../services/cmn-service/cmn-service.service';
 
 @Component({
   selector: 'app-home',
@@ -14,9 +15,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private cmnService: CmnServiceService) {}
 
   onAboutUsClick() {
-    this.router.navigateByUrl('/about-us/123');
+    this.router.navigate(['/about-us/123'], {
+      queryParams: {
+        name: 'Jainik Patel',
+        age: 25,
+      },
+    });
+  }
+
+  onUpdate() {
+    this.cmnService.points.next(10);
   }
 }
