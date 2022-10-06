@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-about-us',
@@ -18,7 +18,13 @@ export class AboutUsComponent implements OnInit {
     },
   };
 
-  constructor(private aRoute: ActivatedRoute) {}
+  constructor(private aRoute: ActivatedRoute, private router: Router) {
+    console.log('State Data :- ', this.aRoute);
+
+    this.aRoute.queryParams.subscribe((res: any) => {
+      console.log('Params :- ', res);
+    });
+  }
 
   myMethod(value, value2?, value3?) {
     console.log(value, value2, value3);
@@ -34,6 +40,7 @@ export class AboutUsComponent implements OnInit {
     );
 
     this.id = this.aRoute?.snapshot?.params?.id;
+
     console.log('My Id :- ', this.id);
     this.myForm = new FormGroup({
       name: new FormControl('', [
