@@ -29,6 +29,10 @@ import {
   PercentPipe,
 } from '@angular/common';
 import { TemplateDrivenComponent } from './template-driven/template-driven.component';
+import { ObservalbePromisComponent } from './observalbe-promis/observalbe-promis.component';
+import { HeaderComponent } from './header/header.component';
+import { HttpComponent } from './http/http.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +44,9 @@ import { TemplateDrivenComponent } from './template-driven/template-driven.compo
     FileUploadComponent,
     PipesComponent,
     TemplateDrivenComponent,
+    ObservalbePromisComponent,
+    HeaderComponent,
+    HttpComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +64,7 @@ import { TemplateDrivenComponent } from './template-driven/template-driven.compo
     MatCheckboxModule,
     MatSelectModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [DatePipe, CurrencyPipe],
   bootstrap: [AppComponent],

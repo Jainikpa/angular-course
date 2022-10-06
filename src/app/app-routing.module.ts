@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { HomeComponent } from './home/home.component';
+import { HttpComponent } from './http/http.component';
+import { ObservalbePromisComponent } from './observalbe-promis/observalbe-promis.component';
 import { ParentComponent } from './parent/parent.component';
 import { PipesComponent } from './pipes/pipes.component';
 
@@ -30,6 +32,14 @@ const routes: Routes = [
   {
     path: 'pipes',
     component: PipesComponent,
+  },
+  {
+    path: 'observable-promises',
+    component: ObservalbePromisComponent,
+  },
+  {
+    path: 'http',
+    component: HttpComponent,
   },
 ];
 
