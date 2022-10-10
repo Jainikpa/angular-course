@@ -32,7 +32,19 @@ import { TemplateDrivenComponent } from './template-driven/template-driven.compo
 import { ObservalbePromisComponent } from './observalbe-promis/observalbe-promis.component';
 import { HeaderComponent } from './header/header.component';
 import { HttpComponent } from './http/http.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { BookListComponent } from './library/book-list/book-list.component';
+import { RequestBookComponent } from './library/request-book/request-book.component';
+import { SubmitBookComponent } from './library/submit-book/submit-book.component';
+import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
+import { SalaryComponent } from './employee/salary/salary.component';
+import { AttendenceComponent } from './employee/attendence/attendence.component';
+import { StudentListComponent } from './student/student-list/student-list.component';
+import { ResultComponent } from './student/result/result.component';
+import { FeesComponent } from './student/fees/fees.component';
+import { CustomPipePipe } from './pipes/custom-pipe.pipe';
+import { MyDirectiveDirective } from './directives/my-directive.directive';
+import { HttpInterceptorInterceptor } from './http-interceptor.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +59,8 @@ import { HttpClientModule } from '@angular/common/http';
     ObservalbePromisComponent,
     HeaderComponent,
     HttpComponent,
+    CustomPipePipe,
+    MyDirectiveDirective,
   ],
   imports: [
     BrowserModule,
@@ -66,7 +80,15 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [DatePipe, CurrencyPipe],
+  providers: [
+    DatePipe,
+    CurrencyPipe,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
