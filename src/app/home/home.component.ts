@@ -26,7 +26,29 @@ export class HomeComponent {
     });
   }
 
+  onTemplate() {
+    this.router.navigateByUrl('/template-driven');
+  }
+
+  Header() {}
+
+  FileUpload() {}
+
+  Directives() {}
+
+  Child() {}
+
+  ObservalbePromis() {}
+
+  Pipes() {}
+
+  Parent() {}
+
   onUpdate() {
     this.cmnService.points.next(10);
+  }
+
+  onLibraryClick() {
+    this.router.navigateByUrl('library');
   }
 }

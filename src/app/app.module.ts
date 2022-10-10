@@ -33,6 +33,15 @@ import { ObservalbePromisComponent } from './observalbe-promis/observalbe-promis
 import { HeaderComponent } from './header/header.component';
 import { HttpComponent } from './http/http.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BookListComponent } from './library/book-list/book-list.component';
+import { RequestBookComponent } from './library/request-book/request-book.component';
+import { SubmitBookComponent } from './library/submit-book/submit-book.component';
+import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
+import { SalaryComponent } from './employee/salary/salary.component';
+import { AttendenceComponent } from './employee/attendence/attendence.component';
+import { StudentListComponent } from './student/student-list/student-list.component';
+import { ResultComponent } from './student/result/result.component';
+import { FeesComponent } from './student/fees/fees.component';
 @NgModule({
   declarations: [
     AppComponent,
