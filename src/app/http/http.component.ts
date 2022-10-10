@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
@@ -28,8 +28,16 @@ export class HttpComponent implements OnInit, OnDestroy {
   }
 
   getPosts() {
+    let paramsValue = new HttpParams()
+      .set('username', 'jainik123')
+      .set('anohter', 'sadfdfs');
+
+    let headers = new HttpHeaders().set('Authorization', 'token');
     this.getPostSubscription = this.http
-      .get('http://localhost:3000/posts')
+      .get('http://localhost:3000/posts', {
+        params: paramsValue,
+        headers: headers,
+      })
       .subscribe(
         (res: POST[]) => {
           console.log(res);

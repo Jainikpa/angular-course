@@ -15,6 +15,7 @@ import { CmnServiceService } from '../services/cmn-service/cmn-service.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
+  name = 'Jeet';
   constructor(private router: Router, private cmnService: CmnServiceService) {}
 
   onAboutUsClick() {

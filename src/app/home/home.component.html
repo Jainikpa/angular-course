@@ -19,3 +19,11 @@
   <div class="app">Employee Management System</div>
   <div class="app">Student Management System</div>
 </div>
+
+<div>
+  {{ name | customPipe: "Bro" }}
+
+  {{ "Jay" | customPipe }}
+</div>
+
+<div appMyDirective [name]="'Jeet'">Jainik Patel</div>
