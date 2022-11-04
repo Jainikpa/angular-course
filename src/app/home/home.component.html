@@ -168,3 +168,29 @@
 <button (click)="onAboutUsClick()">About Us</button>
 
 <button (click)="onUpdate()">Update Point Value</button>
+
+<button (click)="onTemplate()">Template-driven</button>
+
+<button (click)="FileUpload()">File-Upload</button>
+
+<button (click)="Directives()">Directives</button>
+
+<button (click)="ObservalbePromis()">Observalbe-Promis</button>
+
+<button (click)="Pipes()">Pipes</button>
+
+<button (click)="Parent()">Parent</button>
+
+<div style="padding: 50px; display: flex">
+  <div (click)="onLibraryClick()" class="app">Library Management System</div>
+  <div class="app">Employee Management System</div>
+  <div class="app">Student Management System</div>
+</div>
+
+<div>
+  {{ name | customPipe: "Bro" }}
+
+  {{ "Jay" | customPipe }}
+</div>
+
+<div appMyDirective [name]="'Jeet'">Jainik Patel</div>

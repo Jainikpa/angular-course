@@ -1,14 +1,14 @@
 {
   "posts": [
     {
-      "id": 1,
-      "name": "my Post",
-      "author": "Jainik Patel"
+      "name": "updatedName",
+      "author": "updateAuthor",
+      "id": 1
     },
     {
-      "id": 2,
-      "name": "my second Post",
-      "author": "Jainik Patel"
+      "name": "thisname",
+      "author": "thisauthor",
+      "id": 2
     }
   ]
 }
