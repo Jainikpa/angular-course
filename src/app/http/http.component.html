@@ -1,4 +1,7 @@
 <div style="padding: 20px">
+  <div>
+    <button (click)="onAddPostClick()">Add Post</button>
+  </div>
   <div
     style="
       border: 1px solid black;
@@ -11,5 +14,13 @@
     <div>Id : {{ post?.id }}</div>
     <div>Name : {{ post?.name }}</div>
     <div>Author : {{ post?.author }}</div>
+
+    <div>
+      <button (click)="onDeleteClick(post)" style="color: red">Delete</button>
+    </div>
+
+    <div>
+      <button (click)="onUpdateClick(post)">Update</button>
+    </div>
   </div>
 </div>

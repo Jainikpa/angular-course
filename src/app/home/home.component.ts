@@ -15,6 +15,7 @@ import { CmnServiceService } from '../services/cmn-service/cmn-service.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
+  name = 'Jeet';
   constructor(private router: Router, private cmnService: CmnServiceService) {}
 
   onAboutUsClick() {
@@ -26,7 +27,29 @@ export class HomeComponent {
     });
   }
 
+  onTemplate() {
+    this.router.navigateByUrl('/template-driven');
+  }
+
+  Header() {}
+
+  FileUpload() {}
+
+  Directives() {}
+
+  Child() {}
+
+  ObservalbePromis() {}
+
+  Pipes() {}
+
+  Parent() {}
+
   onUpdate() {
     this.cmnService.points.next(10);
+  }
+
+  onLibraryClick() {
+    this.router.navigateByUrl('library');
   }
 }

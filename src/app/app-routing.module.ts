@@ -42,6 +42,11 @@ const routes: Routes = [
     path: 'http',
     component: HttpComponent,
   },
+  {
+    path: 'library',
+    loadChildren: () =>
+      import('./library/library.module').then((m) => m.LibraryModule),
+  },
 ];
 
 @NgModule({
