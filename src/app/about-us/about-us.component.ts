@@ -47,7 +47,6 @@ export class AboutUsComponent implements OnInit {
         Validators.required,
         Validators.minLength(5),
         Validators.maxLength(20),
-        Validators.pattern(''),
       ]),
       number: new FormControl('', [
         Validators.required,

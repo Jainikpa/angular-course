@@ -11,7 +11,6 @@
         <mat-form-field style="width: 100%" appearance="outline">
           <mat-label>Name</mat-label>
           <input formControlName="name" matInput placeholder="enter name" />
-          <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
         </mat-form-field>
         <div *ngIf="form?.name?.touched && form?.name?.errors?.required">
           Name is required
@@ -36,7 +35,6 @@
             matInput
             placeholder="enter number"
           />
-          <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
         </mat-form-field>
         <div *ngIf="form?.number?.touched && form?.number?.errors?.required">
           Age is required
@@ -58,7 +56,6 @@
             matInput
             placeholder="type address"
           ></textarea>
-          <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
         </mat-form-field>
         <div *ngIf="form?.address?.touched && form?.address?.errors?.minlength">
           minimum 50 words required
@@ -76,7 +73,6 @@
             type="email"
             placeholder="enter email"
           />
-          <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
         </mat-form-field>
       </div>
       <div>
@@ -148,7 +144,7 @@
       </div>
 
       <div>
-        <button (click)="onSubmitClick()" mat-button color="primary">
+        <button (click)="onSubmitClick()" mat-but ton color="primary">
           Submit
         </button>
       </div>
